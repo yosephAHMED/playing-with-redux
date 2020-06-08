@@ -1,5 +1,5 @@
 // reducers/index.js
-import { INCREMENT, INCREMENT_BY_FIVE, DECREMENT, CLEAR } from '../actions';
+import { INCREMENT, INCREMENT_BY_FIVE, INCREMENT_BY_VALUE, DECREMENT, CLEAR, addByUserValue } from '../actions';
 
 const initialState = {value:0};
 export default (state = initialState, action) => {
@@ -8,6 +8,8 @@ export default (state = initialState, action) => {
       return {value: state.value + 1};
     case INCREMENT_BY_FIVE:
       return {value: state.value + 5};
+    case INCREMENT_BY_VALUE:
+      return {value: state.value + addByUserValue(3).value};
     case DECREMENT:
       return {value: state.value - 1};
     case CLEAR:

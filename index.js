@@ -8,7 +8,7 @@ import ReactDOM from 'react-dom';
 import { createStore } from 'redux';
 import Counter from './components/Counter';
 import counter from './reducers';
-import { incrementByOne, decrementByOne, clear, addFive } from './actions';
+import { incrementByOne, addByUserValue, decrementByOne, clear, addFive } from './actions';
 
 /* eslint-disable no-underscore-dangle */
 const store = createStore(counter,
@@ -21,6 +21,7 @@ const render = () => ReactDOM.render(
     value={store.getState().value}
     onIncrement={() => store.dispatch(incrementByOne())}
     onIncrementByFive={() => store.dispatch(addFive())}
+    onIncrementByValue={() => store.dispatch(addByUserValue())}
     onDecrement={() => store.dispatch(decrementByOne())}
     onClear={() => store.dispatch(clear())}
   />,
