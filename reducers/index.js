@@ -1,15 +1,17 @@
 // reducers/index.js
-import { INCREMENT, DECREMENT, CLEAR } from '../actions';
+import { INCREMENT, INCREMENT_BY_FIVE, DECREMENT, CLEAR } from '../actions';
 
-const initialState = 0;
+const initialState = {value:0};
 export default (state = initialState, action) => {
   switch (action.type) {
     case INCREMENT:
-      return state + 1;
+      return {value: state.value + 1};
+    case INCREMENT_BY_FIVE:
+      return {value: state.value + 5};
     case DECREMENT:
-      return state - 1;
+      return {value: state.value - 1};
     case CLEAR:
-      return state = 0;
+      return {value: 0};
     default:
       return state;
   }
