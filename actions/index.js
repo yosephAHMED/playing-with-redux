@@ -30,7 +30,7 @@ export function addByUserValue(number) {
     return {
         type: INCREMENT_BY_VALUE,
         //value: value + number,
-        value: number,
+        payload: number,
     }
 }
 

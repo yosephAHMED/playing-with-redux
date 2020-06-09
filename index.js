@@ -21,7 +21,7 @@ const render = () => ReactDOM.render(
     value={store.getState().value}
     onIncrement={() => store.dispatch(incrementByOne())}
     onIncrementByFive={() => store.dispatch(addFive())}
-    onIncrementByValue={() => store.dispatch(addByUserValue())}
+    onIncrementByValue={() => store.dispatch(addByUserValue(3))}
     onDecrement={() => store.dispatch(decrementByOne())}
     onClear={() => store.dispatch(clear())}
   />,
